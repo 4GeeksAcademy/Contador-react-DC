@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 
+
 //Bootstrap
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap"
@@ -10,9 +11,13 @@ import '../styles/index.css'
 
 // components
 import Home from './components/Home';
+import SecondsCounter from './components/Counter';
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <Home/>
-  </React.StrictMode>,
-)
+let time = 0
+
+function contador(){
+ReactDOM.createRoot(document.getElementById('root')).render(<SecondsCounter seconds={time} />)
+time++
+}
+
+setInterval(contador, 1000)
